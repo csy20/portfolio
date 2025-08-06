@@ -49,22 +49,38 @@ export function Hero() {
 function HeroContent() {
   return (
     <div className="relative z-10 min-h-screen flex items-center justify-center px-4 pb-24">
-      <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-12">
-        {/* Left Side - Content */}
-        <div className="flex-1 text-center lg:text-left">
-          <div className="absolute top-8 right-8">
+      <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
+        {/* Profile Image - Shows first on mobile */}
+        <div className="flex-shrink-0 order-1 lg:order-2">
+          <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96">
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-400 to-purple-600 rounded-full animate-pulse"></div>
+            <div className="absolute inset-2 bg-white dark:bg-gray-900 rounded-full overflow-hidden">
+              <Image
+                src="/pfp.jpeg"
+                alt="CSY - Chitresh Yadav"
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Content - Shows second on mobile */}
+        <div className="flex-1 text-center lg:text-left order-2 lg:order-1">
+          <div className="absolute top-4 right-4 lg:top-8 lg:right-8">
             <ThemeToggle />
           </div>
           
-          <h1 className="text-5xl lg:text-7xl font-bold text-gray-900 dark:text-white mb-4">
+          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-gray-900 dark:text-white mb-4">
             ~csy
           </h1>
           
-          <h2 className="text-2xl lg:text-4xl font-semibold text-blue-600 dark:text-blue-400 mb-8">
+          <h2 className="text-xl sm:text-2xl lg:text-4xl font-semibold text-blue-600 dark:text-blue-400 mb-6 lg:mb-8">
             Flutter Developer
           </h2>
           
-          <div className="space-y-6 text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+          <div className="space-y-4 lg:space-y-6 text-base lg:text-lg text-gray-700 dark:text-gray-300 leading-relaxed max-w-2xl mx-auto lg:mx-0">
             <p>
               My name is ~csy (Chitresh Yadav), just a Flutter developer building some cool stuff.
               Skilled in designing modern Material3 UI and scalable applications using
@@ -87,22 +103,6 @@ function HeroContent() {
               </a>
               .
             </p>
-          </div>
-        </div>
-
-        {/* Right Side - Profile Image */}
-        <div className="flex-shrink-0">
-          <div className="relative w-80 h-80 lg:w-96 lg:h-96">
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-400 to-purple-600 rounded-full animate-pulse"></div>
-            <div className="absolute inset-2 bg-white dark:bg-gray-900 rounded-full overflow-hidden">
-              <Image
-                src="/pfp.jpeg"
-                alt="CSY - Chitresh Yadav"
-                fill
-                className="object-cover"
-                priority
-              />
-            </div>
           </div>
         </div>
       </div>
