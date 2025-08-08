@@ -5,11 +5,15 @@
   --foreground: #171717;
 }
 
-/* When the ThemeProvider sets the `dark` class on <html>, swap variables */
+/* Allow explicit .dark class to control theme (ThemeProvider toggles this) */
 .dark {
   --background: #0a0a0a;
   --foreground: #ededed;
 }
+
+/* Note: we intentionally avoid an @media (prefers-color-scheme) override here
+  so that manual toggling via the `.dark` class always wins. The initial theme
+  is still set by an inline script in layout.tsx based on system preference. */
 
 body {
   color: var(--foreground);
