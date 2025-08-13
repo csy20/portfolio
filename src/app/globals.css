@@ -1,24 +1,38 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  --background-solid: #ffffff;
   --foreground: #171717;
+  --card-bg: rgba(255, 255, 255, 0.6);
+  --border-color: rgba(203, 213, 225, 0.5);
 }
 
 /* Allow explicit .dark class to control theme (ThemeProvider toggles this) */
-.dark {
-  --background: #0a0a0a;
-  --foreground: #ededed;
+:root.dark {
+  --background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+  --background-solid: #0f172a;
+  --foreground: #f1f5f9;
+  --card-bg: rgba(15, 23, 42, 0.6);
+  --border-color: rgba(71, 85, 105, 0.5);
 }
 
-/* Note: we intentionally avoid an @media (prefers-color-scheme) override here
-  so that manual toggling via the `.dark` class always wins. The initial theme
-  is still set by an inline script in layout.tsx based on system preference. */
+/* Keep OS preference as a baseline when no explicit choice is stored */
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) {
+    --background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+    --background-solid: #0f172a;
+    --foreground: #f1f5f9;
+    --card-bg: rgba(15, 23, 42, 0.6);
+    --border-color: rgba(71, 85, 105, 0.5);
+  }
+}
 
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
 }
 
 @layer utilities {

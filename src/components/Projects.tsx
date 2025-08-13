@@ -33,13 +33,20 @@ const projects = [
 
 export function Projects() {
   return (
-    <section className="py-20 bg-white dark:bg-gray-800">
-      <div className="max-w-6xl mx-auto px-4">
+    <section className="py-20 relative">
+      <div 
+        className="absolute inset-0"
+        style={{ 
+          background: 'var(--background)',
+          opacity: 0.98
+        }}
+      />
+      <div className="relative z-10 max-w-6xl mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-4xl font-bold mb-4" style={{ color: 'var(--foreground)' }}>
             Projects
           </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+          <p className="text-lg opacity-70 max-w-2xl mx-auto" style={{ color: 'var(--foreground)' }}>
             Here are some of the projects I&apos;ve built with Flutter and Dart
           </p>
         </div>
@@ -48,13 +55,18 @@ export function Projects() {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="bg-gray-50 dark:bg-gray-900 rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105"
+              className="rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 backdrop-blur-sm border"
+              style={{
+                background: 'var(--card-bg)',
+                borderColor: 'var(--border-color)',
+                color: 'var(--foreground)'
+              }}
             >
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
+              <h3 className="text-xl font-bold mb-3" style={{ color: 'var(--foreground)' }}>
                 {project.title}
               </h3>
               
-              <p className="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
+              <p className="mb-4 leading-relaxed opacity-70" style={{ color: 'var(--foreground)' }}>
                 {project.description}
               </p>
 

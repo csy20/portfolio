@@ -5,44 +5,22 @@ import { ThemeToggle } from './ThemeToggle'
 
 export function Hero() {
   return (
-    <>
-      {/* Light Theme Background */}
-      <div className="min-h-screen w-full relative bg-white dark:hidden">
-        {/* Cool Blue Glow Top */}
-        <div
-          className="absolute inset-0 z-0"
-          style={{
-            background: "#ffffff",
-            backgroundImage: `
-              radial-gradient(
-                circle at top center,
-                rgba(70, 130, 180, 0.5),
-                transparent 70%
-              )
-            `,
-            filter: "blur(80px)",
-            backgroundRepeat: "no-repeat",
-          }}
-        />
-        <HeroContent />
-      </div>
-
-      {/* Dark Theme Background */}
-      <div className="min-h-screen w-full bg-black relative hidden dark:block">
-        {/* Midnight Mist */}
-        <div
-          className="absolute inset-0 z-0"
+    <div className="min-h-screen w-full relative" style={{ background: 'var(--background)' }}>
+      {/* Enhanced atmospheric gradients */}
+      <div className="absolute inset-0 z-0">
+        <div 
+          className="absolute inset-0 opacity-40 transition-opacity duration-500"
           style={{
             backgroundImage: `
-              radial-gradient(circle at 50% 100%, rgba(70, 85, 110, 0.5) 0%, transparent 60%),
-              radial-gradient(circle at 50% 100%, rgba(99, 102, 241, 0.4) 0%, transparent 70%),
-              radial-gradient(circle at 50% 100%, rgba(181, 184, 208, 0.3) 0%, transparent 80%)
+              radial-gradient(circle at 30% 80%, rgba(99, 102, 241, 0.3) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, rgba(168, 85, 247, 0.2) 0%, transparent 50%),
+              radial-gradient(circle at 40% 40%, rgba(59, 130, 246, 0.15) 0%, transparent 50%)
             `,
           }}
         />
-        <HeroContent />
       </div>
-    </>
+      <HeroContent />
+    </div>
   )
 }
 

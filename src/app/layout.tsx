@@ -7,7 +7,7 @@ import { Footer } from '@/components/Footer'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'CSY - Flutter Developer Portfolio',
+  title: '~csy',
   description: 'Flutter developer portfolio of Chitresh Yadav (~csy). Skilled in designing modern Material3 UI and scalable applications using Riverpod/BLoC.',
 }
 

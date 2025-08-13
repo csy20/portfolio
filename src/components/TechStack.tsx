@@ -20,8 +20,8 @@ const techStack = [
     icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg',
   },
   {
-    name: 'Pop!_OS',
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pop-os/pop-os-original.svg',
+    name: 'GitHub',
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg',
   },
   {
     name: 'Ubuntu',
@@ -31,13 +31,20 @@ const techStack = [
 
 export function TechStack() {
   return (
-    <section className="py-20 bg-gray-50 dark:bg-gray-900">
-      <div className="max-w-6xl mx-auto px-4">
+    <section className="py-20 relative">
+      <div 
+        className="absolute inset-0"
+        style={{ 
+          background: 'var(--background)',
+          opacity: 0.95
+        }}
+      />
+      <div className="relative z-10 max-w-6xl mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-4xl font-bold mb-4" style={{ color: 'var(--foreground)' }}>
             Tech Stack
           </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+          <p className="text-lg opacity-70 max-w-2xl mx-auto" style={{ color: 'var(--foreground)' }}>
             Technologies and tools I work with to build amazing mobile applications
           </p>
         </div>
@@ -46,7 +53,12 @@ export function TechStack() {
           {techStack.map((tech) => (
             <div
               key={tech.name}
-              className="flex flex-col items-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105"
+              className="flex flex-col items-center p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 backdrop-blur-sm border"
+              style={{
+                background: 'var(--card-bg)',
+                borderColor: 'var(--border-color)',
+                color: 'var(--foreground)'
+              }}
             >
               <div className="relative w-16 h-16 mb-4">
                 <Image
@@ -56,7 +68,7 @@ export function TechStack() {
                   className="object-contain"
                 />
               </div>
-              <h3 className="text-sm font-semibold text-gray-900 dark:text-white text-center">
+              <h3 className="text-sm font-semibold text-center" style={{ color: 'var(--foreground)' }}>
                 {tech.name}
               </h3>
             </div>
