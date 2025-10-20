@@ -8,6 +8,10 @@
   --border-color: rgba(203, 213, 225, 0.5);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Allow explicit .dark class to control theme (ThemeProvider toggles this) */
 :root.dark {
   --background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
